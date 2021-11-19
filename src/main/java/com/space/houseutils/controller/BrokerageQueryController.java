@@ -13,7 +13,6 @@ public class BrokerageQueryController {
     public Long calcBrokerage(@RequestParam ActionType actionType,
                               @RequestParam Long price){
         // 타입 정의 - 매매 / 임대차
-        //TODO: 중개 수수료 계산하는 로직
         BrokeragePolicy policy = BrokeragePolicyFactory.of(actionType);
         return policy.calculate(price);
     }
